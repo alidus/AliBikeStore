@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BikeStore.Models.Bike>
+
+@{
+    ViewBag.Title = "Bikes catalog";
+}
+
+<h2>Bikes Catalog</h2>
+
+<p>
+    @Html.ActionLink("Add bike to the catalog", "Create")
+</p>
+    <div class="row catalog-row-lables">
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.BikeBrand.Name)
+        </div>
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </div>
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </div>
+        <th></th>
+    </div>
+
+    @{int counter = 0; }
+    @foreach (var item in Model)
+    {
+        <div class="row catalog-row-items">
+            <div class="col-md-2">
+                @Html.DisplayFor(modelItem => item.BikeBrand.Name)
+            </div>
+            <div class="col-md-2">
+                @Html.DisplayFor(modelItem => item.Model)
+            </div>
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.Description)
+            </div>
+            <div class="col-md-2">
+                @Html.DisplayFor(modelItem => item.Price)
+            </div>
+            <div class="col-md-2">
+                @Html.ActionLink("Edit", "Edit", new { id = item.BikeID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BikeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BikeID })
+            </div>
+            <div class="col-md-1">
+                <button class="id-@{@counter} btn btn-primary toggle-bike-specs">+</button>
+            </div>
+        </div>
+        
+        <div class="id-@{@counter} tr-bike-specs row">
+            <div class="col-md-12">
+                @Html.Partial("SpecRow", item.Specs);
+            </div>
+        </div>
+        counter++;
+    }
+
+@section scripts {
+    <script>
+        var allSpecTableRows = $(".tr-bike-specs").each(function () {
+            $(this).toggle();
+        })
+        var allToggleBikeSpecsButton = $(".toggle-bike-specs").each(function () {
+            $(this).click(function () {
+                
+                $(".tr-bike-specs.id-" + this.classList[0].substr(3)).toggle("fast"); 
+                
+            })
+        })
+    </script>
+    }

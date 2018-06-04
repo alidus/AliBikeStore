@@ -22,3 +22,21 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar {
+    box-shadow: 1px 1px 3px grey;
+    background: white;
+}
+
+.catalog-row-lables, .catalog-row-items {
+    height: 40px;
+}
+
+.catalog-row-lables {
+    font-size: 1.7em;
+    border-bottom: 1px solid grey;
+}
+
+.catalog-row-items {
+    padding-top: 10px;
+}

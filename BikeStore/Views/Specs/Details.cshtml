@@ -1,0 +1,42 @@
+﻿@model BikeStore.Models.Spec
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Spec</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bike.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bike.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecType.TypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecType.TypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SpecID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -196,14 +196,25 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BikeBrandsController.cs" />
+    <Compile Include="Controllers\BikesController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SpecsController.cs" />
+    <Compile Include="Controllers\SpecTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bike.cs" />
+    <Compile Include="Models\BikeBrand.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Spec.cs" />
+    <Compile Include="Models\SpecType.cs" />
+    <Compile Include="Models\StoreCatalogContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -266,6 +277,32 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Bikes\Create.cshtml" />
+    <Content Include="Views\Bikes\Delete.cshtml" />
+    <Content Include="Views\Bikes\Details.cshtml" />
+    <Content Include="Views\Bikes\Edit.cshtml" />
+    <Content Include="Views\Bikes\Index.cshtml" />
+    <Content Include="Views\BikeBrands\Create.cshtml" />
+    <Content Include="Views\BikeBrands\Delete.cshtml" />
+    <Content Include="Views\BikeBrands\Details.cshtml" />
+    <Content Include="Views\BikeBrands\Edit.cshtml" />
+    <Content Include="Views\BikeBrands\Index.cshtml" />
+    <Content Include="Views\SpecTypes\Create.cshtml" />
+    <Content Include="Views\SpecTypes\Delete.cshtml" />
+    <Content Include="Views\SpecTypes\Details.cshtml" />
+    <Content Include="Views\SpecTypes\Edit.cshtml" />
+    <Content Include="Views\SpecTypes\Index.cshtml" />
+    <Content Include="Views\Specs\Create.cshtml" />
+    <Content Include="Views\Specs\Delete.cshtml" />
+    <Content Include="Views\Specs\Details.cshtml" />
+    <Content Include="Views\Specs\Edit.cshtml" />
+    <Content Include="Views\Specs\Index.cshtml" />
+    <Content Include="Views\Catalog\Create.cshtml" />
+    <Content Include="Views\Catalog\Delete.cshtml" />
+    <Content Include="Views\Catalog\Details.cshtml" />
+    <Content Include="Views\Catalog\Edit.cshtml" />
+    <Content Include="Views\Catalog\Index.cshtml" />
+    <Content Include="Views\Catalog\SpecRow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
